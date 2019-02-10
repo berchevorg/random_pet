@@ -1,5 +1,15 @@
+terraform {
+  backend "remote" {
+    organization = "berchevorg"
+
+    workspaces {
+      name = "random_pet"
+    }
+  }
+}
+
 resource "random_pet" "name" {
-  length    = "4"
+  length    = "14"
   separator = "-"
 }
 
